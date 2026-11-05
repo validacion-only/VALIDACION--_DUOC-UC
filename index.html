@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duoc UC - Verificación</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* Barra superior (Header) */
+        .header {
+            background-color: #1a1a1a;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* Enlace del logo a duoc.html */
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilos para la imagen del logo (duoc.jpg) */
+        .logo-img {
+            height: 44px; 
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Contenedor Principal */
+        .main-content {
+            display: flex;
+            justify-content: flex-start;
+            padding-top: 30px;
+            padding-left: 40px; 
+        }
+
+        /* Caja del reCAPTCHA corregida */
+        .recaptcha-box {
+            background-color: #f9f9f9;
+            border: 1px solid #d3d3d3;
+            border-radius: 3px;
+            width: 304px;
+            height: 78px;
+            padding: 12px 12px; /* Ajuste de espaciado interno */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .recaptcha-main {
+            display: flex;
+            align-items: center;
+            /* Se eliminó el margen negativo que causaba la superposición */
+        }
+        
+        .recaptcha-left {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Contenedor del Checkbox con más separación */
+        .checkbox-container {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px; /* Separa el cuadro de la letra "No soy un robot" */
+        }
+
+        /* Cuadrado gris oscuro del reCAPTCHA */
+        .checkbox {
+            width: 28px;
+            height: 28px;
+            border: 2.5px solid #555;
+            border-radius: 2px;
+            background-color: white;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-container:hover .checkbox {
+             border-color: #333;
+        }
+
+        /* Animación de Carga (Spinner) */
+        .loading-spinner {
+            width: 28px;
+            height: 28px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4285F4;
+            border-radius: 50%;
+            background-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .recaptcha-text {
+            font-size: 14px;
+            color: #000;
+        }
+
+        /* Texto inferior separado del cuadro */
+        .recaptcha-footer {
+            font-size: 10px;
+            color: #555;
+            position: absolute;
+            bottom: 8px; /* Lo mantiene pegado abajo sin chocar arriba */
+            left: 12px;
+            line-height: 1.3;
+        }
+
+        .recaptcha-footer a {
+            color: #555;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado oscuro -->
+    <header class="header">
+        <!-- El logo carga el archivo duoc.jpg y redirige a duoc.html -->
+        <a href="duoc.html" class="logo-link">
+            <img src="duoc.jpg" alt="Logo Duoc UC" class="logo-img">
+        </a>
+    </header>
+
+    <!-- Contenido con el Widget -->
+    <main class="main-content">
+        <div class="recaptcha-box">
+            
+            <div class="recaptcha-main">
+                <!-- Sección izquierda: Checkbox y texto -->
+                <div class="recaptcha-left">
+                    <div class="checkbox-container" id="recaptcha-click-area">
+                        <div class="checkbox" id="recaptcha-checkbox"></div>
+                    </div>
+                    <!-- Texto visible -->
+                    <span class="recaptcha-text">No soy un robot</span>
+                </div>
+            </div>
+
+            <!-- Texto inferior Enterprise -->
+            <div class="recaptcha-footer">
+                Este sitio supera la <a href="#">cuota gratuita de <br>reCAPTCHA Enterprise</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Lógica de validación y redirección
+        document.getElementById('recaptcha-click-area').addEventListener('click', function() {
+            var checkboxElement = document.getElementById('recaptcha-checkbox');
+            
+            // Reemplaza el cuadrado por el círculo de carga (spinner)
+            checkboxElement.className = 'loading-spinner';
+            
+            // Simula el tiempo de carga (1.5 segundos) y luego redirige
+            setTimeout(function() {
+                window.location.href = 'verifico.html';
+            }, 1500);
+        });
+    </script>
+
+</body>
+</html>
