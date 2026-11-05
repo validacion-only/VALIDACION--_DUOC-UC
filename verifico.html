@@ -133,6 +133,13 @@
             text-transform: uppercase;
             margin-top: 10px;
             line-height: 1.3;
+            font-weight: bold;
+        }
+        
+        .extra-info {
+            margin-top: 10px;
+            font-size: 18px;
+            line-height: 1.4;
         }
 
         /* --- BOTONES --- */
@@ -149,10 +156,11 @@
             cursor: pointer;
         }
 
-        .btn-white {
-            background-color: #fff;
+        /* Modificación del botón a amarillo */
+        .btn-yellow {
+            background-color: #fdb913;
             color: #000;
-            border: 2px solid #000;
+            border: 2px solid #fdb913;
         }
 
     </style>
@@ -176,7 +184,7 @@
     <main class="main-content">
         <h1 class="page-title">Certificado Vigente</h1>
 
-        <p class="issue-date">Emitido el 27/11/2025</p>
+        <p class="issue-date">Emitido el 05/11/2026</p>
 
         <div class="legal-text">
             Las certificaciones emitidas a través de esta página, son otorgadas bajo Firma Electrónica Avanzada, en conformidad a lo dispuesto en la ley N° 19799 y su Reglamento.<br><br>
@@ -186,13 +194,19 @@
         <h2 class="cert-type">CERTIFICADO DE TÍTULO</h2>
 
         <div class="student-info">
-            <div class="student-name">MARCELO FERNANDO ASTETE JIMÉNEZ</div>
-            <div class="student-rut">12.687.723-4</div>
-            <div class="cert-id">ID Certificado: <strong>4197382773</strong></div>
-            <div class="degree-name">TÉCNICO EN ELECTRICIDAD Y AUTOMATIZACIÓN INDUSTRIAL</div>
+            <div class="student-name">Alexis Rodrigo Vergara Vergara</div>
+            <div class="student-rut">15.503.449-1</div>
+            <div class="cert-id">ID Certificado: <strong>78910</strong></div>
+            <div class="degree-name">INGENIERÍA EN CONSTRUCCIÓN</div>
+            
+            <div class="extra-info">
+                <div>Sede: <strong>Puerto Montt</strong></div>
+                <div>Fecha de egreso: <strong>15 de Diciembre de 2021</strong></div>
+            </div>
         </div>
 
-        <a href="https://www.duoc.cl" class="btn btn-white">Ir a Duoc.cl</a>
+        <!-- Botón modificado para descarga y color amarillo -->
+        <a href="AlexisVergara.pdf" download="Certificado-Titulo.pdf" class="btn btn-yellow">Descarga PDF</a>
 
     </main>
 
